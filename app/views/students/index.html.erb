@@ -1,19 +1,9 @@
 <table class="table">
-  <thead>
-    <tr> 
-      <th scope="col">Name</th> 
-      <th scope="col">Homeroom</th>
-      <th scope="col">Graduation Year</th>
+<% @students.each do |student| %>
+    <tr>
+        <td><%= student.name %>
+        <td><%= student.homeroom %>
+        <td><%= student.graduation_year %>
     </tr>
-  </thead>
-  <tbody>
-    <% @students.each do |student| %> 
-      <tr scope="row">
-        <td><%= student.name %> </td>
-        <td><%= student.homeroom %> </td>
-        <td><%= student.graduation_year %> </td>
-       </tr>
-    <% end %> 
-  </tbody>
+<% end %>
 </table>
-

@@ -1,5 +1,9 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.all
+    @students = Student.all.order(:last)
+  end
+
+  def show
+    @student = Student.find(params[:id])
   end
 end
