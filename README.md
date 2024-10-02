@@ -30,3 +30,7 @@ Start dev server with: `rails server`
 
   - Copy students index template from slides to `app/views/students/index.html.erb`
 
+10/2
+
+  - Index route/view done
+  - Some code for show view but not complete
