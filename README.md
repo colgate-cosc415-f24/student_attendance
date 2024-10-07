@@ -34,3 +34,7 @@ Start dev server with: `rails server`
 
   - Index route/view done
   - Some code for show view but not complete
+
+10/7
+
+  - Finish index view, add basic show view

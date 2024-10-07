@@ -1,9 +1,19 @@
 <table class="table">
-<% @students.each do |student| %>
+  <thead>
+    <caption>All students</caption>
+    <tr>
+      <th>Name</th>
+      <th>Homeroom</th>
+      <th>Graduation Year</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @students.each do |student| %>
     <tr>
         <td><%= student.name %>
         <td><%= student.homeroom %>
         <td><%= student.graduation_year %>
     </tr>
-<% end %>
+  <% end %>
+  </tbody>
 </table>
