@@ -38,3 +38,4 @@ Start dev server with: `rails server`
 10/7
 
   - Finish index view, add basic show view
+  - add new view/controller

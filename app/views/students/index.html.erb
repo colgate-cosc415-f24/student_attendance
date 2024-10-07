@@ -10,10 +10,12 @@
   <tbody>
   <% @students.each do |student| %>
     <tr>
-        <td><%= student.name %>
+        <td><%= link_to student.name, student_path(student) %>
         <td><%= student.homeroom %>
         <td><%= student.graduation_year %>
     </tr>
   <% end %>
   </tbody>
 </table>
+<br>
+<%= link_to "Register new student", new_student_path, class: "btn btn-secondary" %>
