@@ -39,3 +39,7 @@ Start dev server with: `rails server`
 
   - Finish index view, add basic show view
   - add new view/controller
+
+10/9
+
+  - new/create actions complete
