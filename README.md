@@ -43,3 +43,7 @@ Start dev server with: `rails server`
 10/9
 
   - new/create actions complete
+
+10/10
+
+  - add rspec/simplecov and configure them (but no tests yet)
