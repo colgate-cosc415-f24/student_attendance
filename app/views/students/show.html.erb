@@ -12,4 +12,8 @@
 
 </dl>
 <br>
+<%= link_to "Edit student record", edit_student_path(@student) %>
+<br>
+<%= button_to "Delete student record", student_path(@student), method: :delete, class: "btn btn-danger" %>
+<br>
 <%= link_to "Back to all students", students_path, class: "btn btn-primary" %>

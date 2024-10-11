@@ -12,6 +12,7 @@ class StudentsController < ApplicationController
   end
 
   def create
+    debugger
     @student = Student.new(create_params) # "mass assignment" of attributes!
     if @student.save
       flash[:notice] = "Student #{@student.name} successfully created"
@@ -25,6 +26,25 @@ class StudentsController < ApplicationController
       # for user to edit, as well as validation errors
     end
   end
+
+  # controller methods
+  def edit
+    @student = Student.find params[:id]
+  end
+
+def update
+  @student = Student.find params[:id]
+  @student.update(create_params)
+  flash[:notice] = "#{@student.name} was successfully updated."
+  redirect_to student_path(@student)
+end
+
+def destroy
+  @student = Student.find(params[:id])
+  @student.destroy
+  flash[:alert] = "Student '#{@student.name}' deleted."
+  redirect_to students_path
+end
 
   private
 
