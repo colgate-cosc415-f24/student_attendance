@@ -47,3 +47,7 @@ Start dev server with: `rails server`
 10/10
 
   - add rspec/simplecov and configure them (but no tests yet)
+
+10/11
+
+  - edit/update and destroy routes
