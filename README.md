@@ -51,3 +51,9 @@ Start dev server with: `rails server`
 10/11
 
   - edit/update and destroy routes
+
+10/19
+
+  - prep cucumber 
+  - add model spec for #name method
+  - start system specs for StudentsController methods
