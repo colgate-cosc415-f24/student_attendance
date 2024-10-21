@@ -1,3 +1,11 @@
+<div class="searchbox">
+  <%= form_with url: students_path, local: true, method: :get do %>
+  <%= label_tag "name_search" %>
+  <%= text_field_tag "name_search", nil, maxlength: 10 %>
+  <%= submit_tag "Search" %>
+  <% end %> 
+</div>
+
 <table class="table">
   <thead>
     <caption>All students</caption>

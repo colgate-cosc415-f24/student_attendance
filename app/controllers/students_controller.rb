@@ -1,6 +1,12 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.all.order(:last)
+    searchfield = params[:name_search]
+    @students = if params[:name_search]
+      @students = Student.name_search(searchfield)
+    else
+      @students = Student.all
+    end
+    @students = @students.order(:last)
   end
 
   def show
