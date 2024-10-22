@@ -57,3 +57,7 @@ Start dev server with: `rails server`
   - prep cucumber 
   - add model spec for #name method
   - start system specs for StudentsController methods
+
+10/21
+
+  - cucumber scenario for search
