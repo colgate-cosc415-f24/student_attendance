@@ -22,6 +22,14 @@ RSpec.describe "Students", type: :system do
   end
 
   context "#new/#create" do
+    it "should render new if save fails" do
+      # arrange
+      student = Student.new
+      expect(student).to receive(:save) { nil }
+      expect(Student).to receive(:new) { student }
+
+      #
+    end
   end
 
   context "#edit/#update" do

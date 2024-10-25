@@ -18,7 +18,6 @@ class StudentsController < ApplicationController
   end
 
   def create
-    debugger
     @student = Student.new(create_params) # "mass assignment" of attributes!
     if @student.save
       flash[:notice] = "Student #{@student.name} successfully created"
