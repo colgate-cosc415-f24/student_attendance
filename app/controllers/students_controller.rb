@@ -39,9 +39,13 @@ class StudentsController < ApplicationController
 
 def update
   @student = Student.find params[:id]
-  @student.update(create_params)
-  flash[:notice] = "#{@student.name} was successfully updated."
-  redirect_to student_path(@student)
+  if @student.update(create_params)
+    flash[:notice] = "#{@student.name} was successfully updated."
+    redirect_to student_path(@student)
+  else
+    flash[:alert] = "Student couldn't be updated"
+    render :edit, status: :unprocessable_entity
+  end
 end
 
 def destroy

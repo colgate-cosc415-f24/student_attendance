@@ -61,3 +61,11 @@ Start dev server with: `rails server`
 10/21
 
   - cucumber scenario for search
+
+10/26
+
+  - start sad path for new/create
+
+10/27
+
+  - fill in sad path, get app to full C0 coverage
