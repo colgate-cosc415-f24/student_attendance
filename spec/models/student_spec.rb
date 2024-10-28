@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe Student, type: :model do
   context "#name" do
     it "should put first and last together, capitalized" do
-      s = Student.new(first: "abc", last: "def")
+      s = Student.new(first: "abc", last: "def", homeroom: "here", graduation_year: 2000)
       expect(s.name).to eq("Abc Def")
     end
   end
 
   context "#name_search" do
     before(:each) do 
-      @a = Student.create!(first: "apple", last: "potatohead")
-      @b = Student.create!(first: "kiwi", last: "melonhead")
+      @a = Student.create!(first: "apple", last: "potatohead", homeroom: "here", graduation_year: 2000)
+      @b = Student.create!(first: "kiwi", last: "melonhead", homeroom: "here", graduation_year: 2000)
     end
 
     it "should correctly find student by name (one match)" do

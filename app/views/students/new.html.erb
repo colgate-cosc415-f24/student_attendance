@@ -1,22 +1,5 @@
 <%# in app/views/students/new.html.erb %>
 <%= form_with model: @student do |student_form| %>
-  <br>
-  <%= student_form.label :first %>
-  <%= student_form.text_field :first %>
-
-  <br>
-  <%= student_form.label :last %>
-  <%= student_form.text_field :last %>
-
-  <br>
-  <%= student_form.label :homeroom %>
-  <%= student_form.text_field :homeroom %>
-
-  <br>
-  <%= student_form.label :graduation_year %>
-  <%= student_form.number_field :graduation_year %>
-
-  <br>
-  <%= student_form.submit %>
+  <%= render partial: 'form', locals: {form: student_form} %>
 <% end %>
-<%# Can also use min and max in number fields. %>
+
