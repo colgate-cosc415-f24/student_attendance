@@ -1,3 +1,9 @@
+<% if @student.errors.size > 0 %>
+  <div class="alert alert-warning">
+    <%= @student.errors.full_messages.join(', ') %>
+  </div>
+  <br>
+<% end %>
   <%= form.label :first %>
   <%= form.text_field :first %>
 

@@ -69,3 +69,7 @@ Start dev server with: `rails server`
 10/27
 
   - fill in sad path, get app to full C0 coverage
+
+10/28
+
+  - partials for new/edit, student index table, validations on Student
