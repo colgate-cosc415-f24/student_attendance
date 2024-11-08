@@ -73,3 +73,8 @@ Start dev server with: `rails server`
 10/28
 
   - partials for new/edit, student index table, validations on Student
+
+11/8
+ 
+  - association for AttendanceRecord
+  - add devise/User model (start)
