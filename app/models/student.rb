@@ -3,6 +3,7 @@ class Student < ApplicationRecord
   validates :last, presence: true
   validates :homeroom, presence: true
   validates :graduation_year, presence: true, numericality: { greater_than_or_equal_to: 1970 }
+  has_many :attendance_records
 
   def name
     # NOT @first.capitalize

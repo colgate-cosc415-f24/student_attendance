@@ -62,12 +62,20 @@ names = ['Keilani Hart',
 'Brielle Vance',
 'Casen Gill']
 
+def create_random_attendance_records(student, num)
+  # date, status (0..2), reason (0..5), description
+  1.upto(num) do
+    student.attendance_records.create(date: Date.parse(sprintf("%02d%02d", rand(9..11), rand(1..30))), status: rand(0..2), reason: rand(0..5))
+  end
+end
+
 homerooms = %w[117 120B 213 227]
 grad_years = (2025..2028).to_a
 names.each do |name|
   first,last = name.split(/ +/)
   student = {first: first, last: last, homeroom: homerooms.sample,
              graduation_year: grad_years.sample}
-  Student.create!(student)
+  s = Student.create!(student)
+  create_random_attendance_records(s, 10)
 end
 
