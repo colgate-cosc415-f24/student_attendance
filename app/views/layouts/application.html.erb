@@ -30,6 +30,26 @@
       <% end %>
     </div>
 
+    <% unless controller_name == 'sessions' %>
+    <div class="row">
+        <% if !user_signed_in? %>
+        <div class="col-9"></div>
+        <div class="col-1">
+          <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
+        </div>
+        <% else %>
+          <div class="col-3">
+            <h3><span class="badge text-bg-success">Hello <%= current_user.email %></span></h3>
+          </div>
+          <div class="col-8"></div>
+          <div class="col-1">
+            <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-warning" %>
+          </div>
+        <% end %>
+      <br>
+    </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

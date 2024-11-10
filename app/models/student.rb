@@ -11,6 +11,22 @@ class Student < ApplicationRecord
   end
 
   def self.name_search(name)
-    Student.where('first LIKE ?', "%#{name}%").or(Student.where('last LIKE ?', "%#{name}%"))
+    Student.where("first LIKE ?", "%#{name}%").or(Student.where("last LIKE ?", "%#{name}%"))
+  end
+
+  def unexcused_absences
+    attendance_records.where(status: :absent).where(reason: :unexcused).count
+  end
+
+  def unexcused_tardy
+    attendance_records.where(status: :tardy).where(reason: :unexcused).count
+  end
+
+  def absence_reasons
+    attendance_records.where(status: :absent).group(:reason).count
+  end
+
+  def tardy_reasons
+    attendance_records.where(status: :tardy).group(:reason).count
   end
 end

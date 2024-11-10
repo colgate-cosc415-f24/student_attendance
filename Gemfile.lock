@@ -54,6 +54,9 @@ GEM
       activemodel (= 7.2.1)
       activesupport (= 7.2.1)
       timeout (>= 0.4.0)
+    activerecord-enhancedsqlite3-adapter (0.8.0)
+      activerecord (>= 7.1)
+      sqlite3 (>= 1.6)
     activestorage (7.2.1)
       actionpack (= 7.2.1)
       activejob (= 7.2.1)
@@ -144,6 +147,8 @@ GEM
     docile (1.4.1)
     drb (2.2.1)
     erubi (1.13.0)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.17.0-aarch64-linux-gnu)
     ffi (1.17.0-aarch64-linux-musl)
     ffi (1.17.0-arm-linux-gnu)
@@ -385,6 +390,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  activerecord-enhancedsqlite3-adapter (~> 0.8.0)
   bootsnap
   brakeman
   capybara
@@ -392,6 +398,7 @@ DEPENDENCIES
   database_cleaner
   debug
   devise
+  faker (~> 3.5)
   importmap-rails
   jbuilder
   puma (>= 5.0)

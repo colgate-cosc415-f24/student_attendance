@@ -61,3 +61,5 @@ group :test do
 end
 
 gem 'devise'
+gem "activerecord-enhancedsqlite3-adapter", "~> 0.8.0"
+gem "faker", "~> 3.5"

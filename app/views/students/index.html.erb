@@ -13,6 +13,8 @@
       <th>Name</th>
       <th>Homeroom</th>
       <th>Graduation Year</th>
+      <th>Unexcused Absences</th>
+      <th>Unexcused Tardy</th>
     </tr>
   </thead>
   <tbody>
@@ -20,4 +22,7 @@
   </tbody>
 </table>
 <br>
-<%= link_to "Register new student", new_student_path, class: "btn btn-secondary" %>
+
+<% if current_user && !current_user.parent? %>
+  <%= link_to "Register new student", new_student_path, class: "btn btn-secondary" %>
+<% end %>

@@ -10,8 +10,31 @@
   <dt>Graduation year</dt>
   <dd><%= @student.graduation_year %></dd>
 
+  <dt>Absence reasons</dt>
+  <dd><%= reason_display(@student.absence_reasons) %></dd>
+
+  <dt>Tardy reasons</dt>
+  <dd><%= reason_display(@student.tardy_reasons) %></dd>
+
 </dl>
 <br>
+
+<%= link_to "Add to attendance record", new_student_attendance_record_path(@student), class: "btn btn-success" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date
+      <th>Status
+      <th>Reason
+      <th>Description
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @student.attendance_records %>
+  </tbody>
+</table>
+
 <%= link_to "Edit student record", edit_student_path(@student) %>
 <br>
 <%= button_to "Delete student record", student_path(@student), method: :delete, class: "btn btn-danger" %>
