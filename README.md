@@ -78,3 +78,11 @@ Start dev server with: `rails server`
  
   - association for AttendanceRecord
   - add devise/User model (start)
+
+11/10
+
+  - create new attendance records, add counts of unexcused absence/tardy to
+    student index.  finish authentication, though some/all views should be 
+    authenticated.
+  - missing tests.
+
