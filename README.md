@@ -86,3 +86,6 @@ Start dev server with: `rails server`
     authenticated.
   - missing tests.
 
+11/11
+
+  - full coverage

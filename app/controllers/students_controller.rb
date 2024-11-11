@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     searchfield = params[:name_search]
     @students = if params[:name_search]

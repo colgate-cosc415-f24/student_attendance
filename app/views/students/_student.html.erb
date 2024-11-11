@@ -2,6 +2,8 @@
   <td><%= link_to student.name, student_path(student) %>
   <td><%= student.homeroom %>
   <td><%= student.graduation_year %>
-  <td><%= student.unexcused_absences %>
-  <td><%= student.unexcused_tardy %>
+  <% if current_user && !current_user.parent? %>
+    <td><%= student.unexcused_absences %>
+    <td><%= student.unexcused_tardy %>
+  <% end %>
 </tr>

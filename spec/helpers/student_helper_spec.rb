@@ -1,15 +1,9 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the StudentHelper. For example:
-#
-# describe StudentHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe StudentHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "reason_display" do
+    it "should return a string from a hash of reasons" do
+      expect(reason_display({one: 1, two: 2})).to eq("one: 1, two: 2")
+    end
+  end
 end

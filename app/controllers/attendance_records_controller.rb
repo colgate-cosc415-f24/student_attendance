@@ -1,4 +1,6 @@
 class AttendanceRecordsController < ApplicationController
+  before_action :verify_user
+
   def new
     @student = Student.find(params[:student_id])
     @attendance_record = @student.attendance_records.build
@@ -19,5 +21,12 @@ class AttendanceRecordsController < ApplicationController
   private
   def create_update_params
     params.require(:attendance_record).permit(:date, :status, :reason, :description)
+  end
+
+  def verify_user
+    if !current_user || (current_user && current_user.parent?)
+      flash[:alert] = "Authorized users only"
+      redirect_to students_path
+    end
   end
 end

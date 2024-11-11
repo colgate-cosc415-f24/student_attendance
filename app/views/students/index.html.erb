@@ -13,8 +13,10 @@
       <th>Name</th>
       <th>Homeroom</th>
       <th>Graduation Year</th>
-      <th>Unexcused Absences</th>
-      <th>Unexcused Tardy</th>
+      <% if current_user && !current_user.parent? %>
+        <th>Unexcused Absences</th>
+        <th>Unexcused Tardy</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
