@@ -11,14 +11,16 @@
     <%= form.date_select :date %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :status %>
-    <%= form.select :status, AttendanceRecord.statuses.keys.map { |w| [w.humanize, w] }, {}, class: 'form-control' %>
-  </div>
+  <div data-controller="attendance-form">
+    <div class="form-group">
+      <%= form.label :status %>
+      <%= form.select :status, AttendanceRecord.statuses.keys.map { |w| [w.humanize, w] }, {}, class: 'form-control', 'data-action': 'attendance-form#status' %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :reason %>
-    <%= form.select :reason, AttendanceRecord.reasons.keys.map { |w| [w.humanize, w] }, {}, class: 'form-control' %>
+    <div id="reason" class="form-group">
+      <%= form.label :reason %>
+      <%= form.select :reason, AttendanceRecord.reasons.keys.map { |w| [w.humanize, w] }, {}, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="form-group">
