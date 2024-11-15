@@ -1,3 +1,4 @@
+<%= turbo_frame_tag 'new_attendance_record' do %>
 <%= form_with model: @attendance_record, url: student_attendance_records_path, method: :post do |form| %>
   <% if @attendance_record.errors.size > 0 %>
   <div class="alert alert-warning">
@@ -31,4 +32,5 @@
   <br>
   <%= form.submit %>
 
+<% end %>
 <% end %>

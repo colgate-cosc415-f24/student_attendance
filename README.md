@@ -89,3 +89,7 @@ Start dev server with: `rails server`
 11/11
 
   - full coverage
+
+11/15
+  
+  - turboframes/streams new/create for attendance records

@@ -1,0 +1,9 @@
+<%# in create.turbo_stream.erb %>
+
+<%= turbo_stream.append 'attendance_record_table' do %>
+  <%= render @attendance_record %>
+<% end %>
+
+<%= turbo_stream.replace 'new_attendance_record' do %>
+  <%= render partial: 'students/new_attendance_record' %>
+<% end %>

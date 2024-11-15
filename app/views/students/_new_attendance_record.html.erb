@@ -1,0 +1,5 @@
+<%= turbo_frame_tag 'new_attendance_record' do %>
+  <% if current_user && (current_user.attendant? || current_user.admin?) %>
+    <%= link_to "Add to attendance record", new_student_attendance_record_path(@student), class: "btn btn-success" %>
+  <% end %>
+<% end %>

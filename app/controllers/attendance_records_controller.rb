@@ -11,7 +11,12 @@ class AttendanceRecordsController < ApplicationController
     @attendance_record = @student.attendance_records.build(create_update_params)
     if @attendance_record.save
       flash[:notice] = "Attendance record created"
-      redirect_to student_path(@student) and return
+      respond_to do |format|
+        format.html do
+          redirect_to student_path(@student) and return
+        end
+        format.turbo_stream
+      end
     else
       flash[:alert] = "Failed to create attendance record"
       render :new, status: :unprocessable_entity
